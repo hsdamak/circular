@@ -66,13 +66,23 @@ public class CircularLinkedLIst {
         size++;
     }
 
+    public  void addNodeToTail(int data){
+        if(size == 0){
+            addNodeToHead(data);
+        }else {
+            Node node = new Node(data);
+            tail.next = node;
+            tail = node;
+            tail.next = head;
+        }
+        size++;
+    }
 
 
     public static void main(String[] args) {
         CircularLinkedLIst circular = new CircularLinkedLIst();
-
+        circular.print();
         circular.addNodeToHead(1);
-        System.out.println(circular);
         circular.print();
 
     }
