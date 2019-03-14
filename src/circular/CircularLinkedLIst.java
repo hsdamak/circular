@@ -78,11 +78,24 @@ public class CircularLinkedLIst {
         size++;
     }
 
+    public void deleteHead(){
+        if(size != 0){
+            head = head.next;
+            tail.next = head;
+            size--;
+        }
+
+    }
+
 
     public static void main(String[] args) {
         CircularLinkedLIst circular = new CircularLinkedLIst();
         circular.print();
         circular.addNodeToHead(1);
+        circular.addNodeToHead(0);
+        circular.addNodeToTail(2);
+        circular.addNodeToTail(3);
+        circular.deleteHead();
         circular.print();
 
     }
