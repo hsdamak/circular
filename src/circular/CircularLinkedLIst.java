@@ -51,12 +51,30 @@ public class CircularLinkedLIst {
         }
     }
 
+    public void addNodeToHead(int data){
+        Node n = new Node(data);
+        if(size == 0){
+            head = n;
+            tail = n;
+            n.next = head;
+        } else {
+            Node temp = head;
+            n.next = head;
+            head =n;
+            tail.next = head;
+        }
+        size++;
+    }
+
 
 
     public static void main(String[] args) {
         CircularLinkedLIst circular = new CircularLinkedLIst();
+
+        circular.addNodeToHead(1);
         System.out.println(circular);
         circular.print();
+
     }
 
 }
